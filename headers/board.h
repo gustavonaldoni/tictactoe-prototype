@@ -30,6 +30,7 @@ void DrawBoard(Board board)
     int i, j;
     int space = board.size / 3;
     int startX, startY, endX, endY;
+    int crossSize = 80;
 
     DrawRectangleLines(board.x, board.y, board.size, board.size, BLACK);
 
@@ -61,13 +62,31 @@ void DrawBoard(Board board)
         {
             if (board.canvas[i][j] == 1)
             {
-                // Draw circle
-                DrawRectangle(board.x + i * space, board.y + j * space, space, space, RED);
+                DrawCross(board.x + i * space + (space - crossSize) / 2,
+                          board.y + j * space + (space - crossSize) / 2,
+                          crossSize, 2.0);
+
+                // DrawRectangle(board.x + i * space, board.y + j * space, space, space, RED);
             }
             else if (board.canvas[i][j] == 2)
             {
-                // Draw cross
-                DrawRectangle(board.x + i * space, board.y + j * space, space, space, BLUE);
+
+                DrawCircleLines(board.x + i * space + space / 2,
+                           board.y + j * space + space / 2, 
+                           (float)(crossSize / 2), 
+                           DARKGRAY);
+                
+                DrawCircleLines(board.x + i * space + space / 2,
+                           board.y + j * space + space / 2, 
+                           (float)(crossSize / 2 + 1), 
+                           DARKGRAY);
+
+                DrawCircleLines(board.x + i * space + space / 2,
+                           board.y + j * space + space / 2, 
+                           (float)(crossSize / 2 + 2), 
+                           DARKGRAY);
+
+                //DrawRectangle(board.x + i * space, board.y + j * space, space, space, BLUE);
             }
         }
     }

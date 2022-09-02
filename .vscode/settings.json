@@ -10,6 +10,7 @@
         "stdbool.h": "c",
         "board.h": "c",
         "turn.h": "c",
-        "checkwin.h": "c"
+        "checkwin.h": "c",
+        "devname.h": "c"
     }
 }

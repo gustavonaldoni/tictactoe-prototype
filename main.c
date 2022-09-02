@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "include/raylib.h"
+#include "headers/utils.h"
 #include "headers/board.h"
 #include "headers/checkWin.h"
 #include "headers/turn.h"
+#include "headers/devName.h"
 
 // Compile with: gcc main.c -o game.exe -O1 -Wall -std=c99 -Wno-missing-braces -I include/ -L lib -lraylib -lopengl32 -lgdi32 -lwinmm
 
@@ -25,8 +27,9 @@ int main()
 	ResetBoard(&board);
 
 	SetTargetFPS(144);
-
 	InitAudioDevice();
+
+	srand(time(NULL));
 
 	while (!WindowShouldClose())
 	{
@@ -78,6 +81,20 @@ int main()
 		{
 			DrawTieMessage();
 		}
+
+		if (CheckWin(board, 1) || CheckWin(board, 2) || CheckTie(board, totalPlays))
+		{
+			DrawOptionToRestartGame();
+
+			if (IsKeyPressed(KEY_SPACE))
+			{
+				ResetBoard(&board);
+				totalPlays = 0;
+				turn = (rand() % 2) + 1;
+			}
+		}
+
+		DrawDevName();
 
 		EndDrawing();
 	}

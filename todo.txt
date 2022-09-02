@@ -12,9 +12,9 @@ F3 - A cada jogada, exibir um texto informando se é a vez do jogador 'X' ou do 
 F4 - Exibir um texto informando quando um jogador ganhar o jogo e quando empatar. OK
     Empate -> quando o tabuleiro tiver cheio e nesse estado nenhum jogador tiver ganho
 
-F5 - Exibir o nome do desenvolvedor da aplicação em algum lugar da tela.
+F5 - Exibir o nome do desenvolvedor da aplicação em algum lugar da tela. OK
 
-F6 - Assim que o jogo terminar, questionar o usuário se ele deseja reiniciar o jogo. (OPCIONAL)
+F6 - Assim que o jogo terminar, questionar o usuário se ele deseja reiniciar o jogo. (OPCIONAL) OK
 
 Entregar todo o código do projeto (executável e código-fonte), inserindo o arquivo executável na raiz. 
 
