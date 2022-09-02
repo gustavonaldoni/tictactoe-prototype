@@ -3,7 +3,8 @@
 #include "include/raylib.h"
 #include "headers/utils.h"
 #include "headers/board.h"
-#include "headers/checkWin.h"
+#include "headers/win.h"
+#include "headers/tie.h"
 #include "headers/turn.h"
 #include "headers/devName.h"
 
@@ -59,6 +60,7 @@ int main()
 		ClearBackground(RAYWHITE);
 
 		DrawBoard(board);
+		DrawDevName();
 
 		if (totalPlays <= 9 && CheckTie(board, totalPlays) == false)
 		{
@@ -93,8 +95,6 @@ int main()
 				turn = (rand() % 2) + 1;
 			}
 		}
-
-		DrawDevName();
 
 		EndDrawing();
 	}

@@ -1,7 +1,5 @@
 bool CheckWin(Board, int);
-bool CheckTie(Board, int);
 void DrawWinMessage(int);
-void DrawTieMessage();
 
 bool CheckWin(Board board, int playerNumber)
 {
@@ -50,16 +48,6 @@ bool CheckWin(Board board, int playerNumber)
     return false;
 }
 
-bool CheckTie(Board board, int totalPlays)
-{
-    if (totalPlays == 9 && 
-        CheckWin(board, 1) == false &&
-        CheckWin(board, 2) == false)
-        return true;
-
-    return false;
-}
-
 void DrawWinMessage(int playerNumber)
 {
     int fontSize = 30;
@@ -80,15 +68,4 @@ void DrawWinMessage(int playerNumber)
 
         DrawText(TextFormat("Player 0 WINS!!"), x, y, fontSize, DARKGRAY);
     }
-}
-
-void DrawTieMessage()
-{
-    int fontSize = 30;
-    int x, y;
-
-    x = (GetScreenWidth() - MeasureText("Game TIED! No one has won ...", fontSize)) / 2;
-    y = GetScreenHeight() / 12;
-
-    DrawText(TextFormat("Game TIED! No one has won ..."), x, y, fontSize, DARKGRAY);
 }
