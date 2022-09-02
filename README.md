@@ -6,7 +6,7 @@ The game is set to be as minimalistic as possible, so it only has 1 menu and the
 To place a piece on the board just click on the quadrant you wanna play and a correct piece will be placed on it. After this the turn will pass and the seconde player cand do it as well.
 
 # 👉 Screenshots
-![](https://github.com/gustavonaldoni/tictactoe-prototype/blob/main/images/forReadme/PlayerXWon.png) ![](https://github.com/gustavonaldoni/tictactoe-prototype/blob/main/images/forReadme/PlayerOWon.png) ![](https://github.com/gustavonaldoni/tictactoe-prototype/blob/main/images/forReadme/TiedGame.png) 
+<img src="images/forReadme/PlayerXWon.png" width="300px"/> <img src="images/forReadme/PlayerOWon.png" width="300px"/> <img src="images/forReadme/TiedGame.png" width="300px"/> 
 
 # 🎲 Gameplay
 ![Gameplay Demmo](https://github.com/gustavonaldoni/tictactoe-prototype/blob/main/images/forReadme/TicTacToe-Demo.gif)
