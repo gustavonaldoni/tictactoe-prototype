@@ -8,6 +8,8 @@
         "utils.h": "c",
         "playagain.h": "c",
         "stdbool.h": "c",
-        "board.h": "c"
+        "board.h": "c",
+        "turn.h": "c",
+        "checkwin.h": "c"
     }
 }

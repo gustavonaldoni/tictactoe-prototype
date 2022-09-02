@@ -1,0 +1,24 @@
+Implementar o jogo da velha em Open GL cujas interações do usuário deverão ocorrer através da utilização do mouse. 
+Faça uso da implementação de referência de manipulação do mouse do material abordado em uma das aulas expositivas.
+
+Seguem outros requisitos do trabalho:
+
+F1 - Desenhar o tabuleiro. OK
+
+F2 - Posição da jogada de um jogador deve ser definida através do clique do mouse. OK
+
+F3 - A cada jogada, exibir um texto informando se é a vez do jogador 'X' ou do jogador 'O'. OK
+
+F4 - Exibir um texto informando quando um jogador ganhar o jogo e quando empatar. OK
+    Empate -> quando o tabuleiro tiver cheio e nesse estado nenhum jogador tiver ganho
+
+F5 - Exibir o nome do desenvolvedor da aplicação em algum lugar da tela.
+
+F6 - Assim que o jogo terminar, questionar o usuário se ele deseja reiniciar o jogo. (OPCIONAL)
+
+Entregar todo o código do projeto (executável e código-fonte), inserindo o arquivo executável na raiz. 
+
+Gravar também um vídeo explicativo sobre o código-fonte e demonstrando as funcionamento do programa durante a execução.
+Faça o upload do vídeo em sua conta do YouTube e me encaminhe o link de publicação do vídeo.
+
+Bom trabalho!
