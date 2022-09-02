@@ -8,6 +8,7 @@
 #include "headers/turn.h"
 #include "headers/play.h"
 #include "headers/devName.h"
+#include "headers/timePassed.h"
 
 // Compile with: gcc main.c -o game.exe -O1 -Wall -std=c99 -Wno-missing-braces -I include/ -L lib -lraylib -lopengl32 -lgdi32 -lwinmm
 
@@ -65,6 +66,7 @@ int main()
 
 		DrawBoard(board);
 		DrawDevName();
+		DrawTimePassed();
 
 		if (totalPlays <= 9 && CheckTie(board, totalPlays) == false)
 		{
