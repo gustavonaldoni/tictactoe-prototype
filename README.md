@@ -9,7 +9,7 @@ To place a piece on the board just click on the quadrant you wanna play and a co
 <img src="images/forReadme/Demo.gif" width="800px"/>
 
 ## 👉 Screenshots
-<img src="images/forReadme/PlayerXWon.png" width="500px"/> <img src="images/forReadme/TiedGame.png" width="500px"/> 
+<img src="images/forReadme/PlayerXWon.png" width="400px"/> <img src="images/forReadme/TiedGame.png" width="400px"/> 
 
 ## 🤝 Contributing
 Feel free to clone / create a fork of this repository and modify the game as you like to. Updates are welcome and you can use the code to any noncommercial purposes.
