@@ -1,0 +1,13 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "stdlib.h": "c",
+        "soundbar.h": "c",
+        "raylib.h": "c",
+        "player.h": "c",
+        "utils.h": "c",
+        "playagain.h": "c",
+        "stdbool.h": "c",
+        "board.h": "c"
+    }
+}
