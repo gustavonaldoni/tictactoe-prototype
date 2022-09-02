@@ -6,6 +6,7 @@
 #include "headers/win.h"
 #include "headers/tie.h"
 #include "headers/turn.h"
+#include "headers/play.h"
 #include "headers/devName.h"
 
 // Compile with: gcc main.c -o game.exe -O1 -Wall -std=c99 -Wno-missing-braces -I include/ -L lib -lraylib -lopengl32 -lgdi32 -lwinmm
@@ -38,21 +39,24 @@ int main()
 			totalPlays <= 9 &&
 			CheckTie(board, totalPlays) == false)
 		{
-			totalPlays += 1;
-
 			playerLine = GetPlayerLineCoordinate(board);
 			playerColumn = GetPlayerColumnCoordinate(board);
 
-			if (turn == 1)
+			if (PlayIsValid(board, playerLine, playerColumn))
 			{
-				board.canvas[playerLine][playerColumn] = 1;
-				turn = 2;
-			}
+				totalPlays += 1;
 
-			else if (turn == 2)
-			{
-				board.canvas[playerLine][playerColumn] = 2;
-				turn = 1;
+				if (turn == 1)
+				{
+					board.canvas[playerLine][playerColumn] = 1;
+					turn = 2;
+				}
+
+				else if (turn == 2)
+				{
+					board.canvas[playerLine][playerColumn] = 2;
+					turn = 1;
+				}
 			}
 		}
 
