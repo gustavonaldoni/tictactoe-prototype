@@ -5,11 +5,11 @@ This is an implementation of the classic TicTacToe game using only the good and 
 The game is set to be as minimalistic as possible, so it only has 1 menu and the controls are made using the left mouse key. 
 To place a piece on the board just click on the quadrant you wanna play and a correct piece will be placed on it. After this the turn will pass and the seconde player cand do it as well.
 
-## 👉 Screenshots
-<img src="images/forReadme/PlayerXWon.png" width="400px"/> <img src="images/forReadme/PlayerOWon.png" width="400px"/> <img src="images/forReadme/TiedGame.png" width="400px"/> 
-
 ## 🎲 Gameplay
-![Gameplay Demmo](https://github.com/gustavonaldoni/tictactoe-prototype/blob/main/images/forReadme/Demo.gif)
+<img src="images/forReadme/Demo.gif" width="800px"/>
+
+## 👉 Screenshots
+<img src="images/forReadme/PlayerXWon.png" width="500px"/> <img src="images/forReadme/TiedGame.png" width="500px"/> 
 
 ## 🤝 Contributing
 Feel free to clone / create a fork of this repository and modify the game as you like to. Updates are welcome and you can use the code to any noncommercial purposes.
