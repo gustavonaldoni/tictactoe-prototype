@@ -91,12 +91,15 @@ void DrawWinMessage(int playerNumber)
 
 void DrawWinLine(Vector2 winCoordinatesP1, Vector2 winCoordinatesP2)
 {
-    DrawLineEx(winCoordinatesP1, winCoordinatesP2, 5.0, DARKGRAY);
+    DrawLineEx(winCoordinatesP1,
+               winCoordinatesP2,
+               3.0,
+               GOLD);
 }
 
 Vector2 GetCenteredWinCoordinates(Board board, int i, int j, int space)
 {
-    Vector2 result = {0,0};
+    Vector2 result = {0, 0};
 
     result.x = board.x + (space * i + space / 2);
     result.y = board.y + (space * j + space / 2);

@@ -1,5 +1,7 @@
 void DrawCross(int, int, int, float);
 void DrawOptionToRestartGame();
+int GenerateRandomNumber(int, int);
+bool RandomProbabilityManipulation(int);
 
 void DrawCross(int x, int y, int size, float thick)
 {
@@ -16,4 +18,18 @@ void DrawOptionToRestartGame()
     y = 1.5 * (GetScreenHeight() / 12);
 
     DrawText(TextFormat("Press SPACE to play again"), x, y, fontSize, DARKGRAY);
+}
+
+int GenerateRandomNumber(int lower, int upper)
+{
+    return (rand() % (upper - lower + 1)) + lower;
+}
+
+bool RandomProbabilityManipulation(int percentage)
+{
+    int n;
+
+    n = (rand() % 100) + 1;
+
+    return n <= percentage;
 }
