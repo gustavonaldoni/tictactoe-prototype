@@ -32,7 +32,7 @@ void DrawBoard(Board board)
     int startX, startY, endX, endY;
     int crossSize = 80;
 
-    DrawRectangleLines(board.x, board.y, board.size, board.size, BLACK);
+    //DrawRectangleLines(board.x, board.y, board.size, board.size, BLACK);
 
     for (i = 1; i < 3; i++)
     {
@@ -65,28 +65,24 @@ void DrawBoard(Board board)
                 DrawCross(board.x + i * space + (space - crossSize) / 2,
                           board.y + j * space + (space - crossSize) / 2,
                           crossSize, 2.0);
-
-                // DrawRectangle(board.x + i * space, board.y + j * space, space, space, RED);
             }
             else if (board.canvas[i][j] == 2)
             {
 
                 DrawCircleLines(board.x + i * space + space / 2,
-                           board.y + j * space + space / 2, 
-                           (float)(crossSize / 2), 
-                           DARKGRAY);
-                
-                DrawCircleLines(board.x + i * space + space / 2,
-                           board.y + j * space + space / 2, 
-                           (float)(crossSize / 2 + 1), 
-                           DARKGRAY);
+                                board.y + j * space + space / 2,
+                                (float)(crossSize / 2),
+                                DARKGRAY);
 
                 DrawCircleLines(board.x + i * space + space / 2,
-                           board.y + j * space + space / 2, 
-                           (float)(crossSize / 2 + 2), 
-                           DARKGRAY);
+                                board.y + j * space + space / 2,
+                                (float)(crossSize / 2 + 1),
+                                DARKGRAY);
 
-                //DrawRectangle(board.x + i * space, board.y + j * space, space, space, BLUE);
+                DrawCircleLines(board.x + i * space + space / 2,
+                                board.y + j * space + space / 2,
+                                (float)(crossSize / 2 + 2),
+                                DARKGRAY);
             }
         }
     }

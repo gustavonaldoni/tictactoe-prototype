@@ -1,9 +1,12 @@
-bool CheckWin(Board, int);
+bool CheckWin(Board, int, Vector2 *, Vector2 *);
 void DrawWinMessage(int);
+void DrawWinLine(Vector2, Vector2);
+Vector2 GetCenteredWinCoordinates(Board board, int, int, int);
 
-bool CheckWin(Board board, int playerNumber)
+bool CheckWin(Board board, int playerNumber, Vector2 *winCoordinatesP1, Vector2 *winCoordinatesP2)
 {
     int i, j;
+    int space = board.size / 3;
 
     // Check horizontal win
     for (i = 0; i < 3; i++)
@@ -13,7 +16,11 @@ bool CheckWin(Board board, int playerNumber)
         if (board.canvas[i][j] == board.canvas[i][j + 1] &&
             board.canvas[i][j + 1] == board.canvas[i][j + 2] &&
             board.canvas[i][j] == playerNumber)
+        {
+            *winCoordinatesP1 = GetCenteredWinCoordinates(board, i, j, space);
+            *winCoordinatesP2 = GetCenteredWinCoordinates(board, i, j + 2, space);
             return true;
+        }
     }
 
     // Check vertical win
@@ -24,7 +31,11 @@ bool CheckWin(Board board, int playerNumber)
         if (board.canvas[i][j] == board.canvas[i + 1][j] &&
             board.canvas[i + 1][j] == board.canvas[i + 2][j] &&
             board.canvas[i][j] == playerNumber)
+        {
+            *winCoordinatesP1 = GetCenteredWinCoordinates(board, i, j, space);
+            *winCoordinatesP2 = GetCenteredWinCoordinates(board, i + 2, j, space);
             return true;
+        }
     }
 
     // Check diagonal win -> left to right
@@ -34,7 +45,11 @@ bool CheckWin(Board board, int playerNumber)
     if (board.canvas[i][j] == board.canvas[i + 1][j + 1] &&
         board.canvas[i + 1][j + 1] == board.canvas[i + 2][j + 2] &&
         board.canvas[i][j] == playerNumber)
+    {
+        *winCoordinatesP1 = GetCenteredWinCoordinates(board, i, j, space);
+        *winCoordinatesP2 = GetCenteredWinCoordinates(board, i + 2, j + 2, space);
         return true;
+    }
 
     // Check diagonal win -> right to left
     i = 0;
@@ -43,7 +58,11 @@ bool CheckWin(Board board, int playerNumber)
     if (board.canvas[i][j] == board.canvas[i + 1][j - 1] &&
         board.canvas[i + 1][j - 1] == board.canvas[i + 2][j - 2] &&
         board.canvas[i][j] == playerNumber)
+    {
+        *winCoordinatesP1 = GetCenteredWinCoordinates(board, i, j, space);
+        *winCoordinatesP2 = GetCenteredWinCoordinates(board, i + 2, j - 2, space);
         return true;
+    }
 
     return false;
 }
@@ -68,4 +87,19 @@ void DrawWinMessage(int playerNumber)
 
         DrawText(TextFormat("Player 0 WINS!!"), x, y, fontSize, DARKGRAY);
     }
+}
+
+void DrawWinLine(Vector2 winCoordinatesP1, Vector2 winCoordinatesP2)
+{
+    DrawLineEx(winCoordinatesP1, winCoordinatesP2, 5.0, DARKGRAY);
+}
+
+Vector2 GetCenteredWinCoordinates(Board board, int i, int j, int space)
+{
+    Vector2 result = {0,0};
+
+    result.x = board.x + (space * i + space / 2);
+    result.y = board.y + (space * j + space / 2);
+
+    return result;
 }

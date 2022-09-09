@@ -16,6 +16,9 @@ int playerLine, playerColumn;
 int turn = 1;
 int totalPlays = 0;
 
+Vector2 winCoordinatesP1 = {0, 0};
+Vector2 winCoordinatesP2 = {1200, 900};
+
 int main()
 {
 	int screenConstant = 300;
@@ -38,7 +41,7 @@ int main()
 	{
 		if (PlayerHasClickedOnBoard(board) &&
 			totalPlays <= 9 &&
-			CheckTie(board, totalPlays) == false)
+			CheckTie(board, totalPlays, winCoordinatesP1, winCoordinatesP2) == false)
 		{
 			playerLine = GetPlayerLineCoordinate(board);
 			playerColumn = GetPlayerColumnCoordinate(board);
@@ -68,29 +71,31 @@ int main()
 		DrawDevName();
 		DrawTimePassed();
 
-		if (totalPlays <= 9 && CheckTie(board, totalPlays) == false)
+		if (totalPlays <= 9 && CheckTie(board, totalPlays, winCoordinatesP1, winCoordinatesP2) == false)
 		{
 			DrawTurnMessage(turn);
 		}
 
-		if (CheckWin(board, 1))
+		if (CheckWin(board, 1, &winCoordinatesP1, &winCoordinatesP2))
 		{
 			DrawWinMessage(1);
+			DrawWinLine(winCoordinatesP1, winCoordinatesP2);
 			totalPlays = 10;
 		}
 
-		if (CheckWin(board, 2))
+		if (CheckWin(board, 2, &winCoordinatesP1, &winCoordinatesP2))
 		{
 			DrawWinMessage(2);
+			DrawWinLine(winCoordinatesP1, winCoordinatesP2);
 			totalPlays = 10;
 		}
 
-		if (CheckTie(board, totalPlays))
+		if (CheckTie(board, totalPlays, winCoordinatesP1, winCoordinatesP2))
 		{
 			DrawTieMessage();
 		}
 
-		if (CheckWin(board, 1) || CheckWin(board, 2) || CheckTie(board, totalPlays))
+		if (CheckWin(board, 1, &winCoordinatesP1, &winCoordinatesP2) || CheckWin(board, 2, &winCoordinatesP1, &winCoordinatesP2) || CheckTie(board, totalPlays, winCoordinatesP1, winCoordinatesP2))
 		{
 			DrawOptionToRestartGame();
 

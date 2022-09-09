@@ -1,11 +1,11 @@
-bool CheckTie(Board, int);
+bool CheckTie(Board, int, Vector2, Vector2);
 void DrawTieMessage();
 
-bool CheckTie(Board board, int totalPlays)
+bool CheckTie(Board board, int totalPlays, Vector2 winCoordinatesP1, Vector2 winCoordinatesP2)
 {
     if (totalPlays == 9 &&
-        CheckWin(board, 1) == false &&
-        CheckWin(board, 2) == false)
+        CheckWin(board, 1, &winCoordinatesP1, &winCoordinatesP2) == false &&
+        CheckWin(board, 2, &winCoordinatesP1, &winCoordinatesP2) == false)
         return true;
 
     return false;
